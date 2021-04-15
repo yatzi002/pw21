@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<title>UNIDAD 3 | Index</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximun-scale=1">
+<meta name="description" content="Prácticas de la Unidad 2 de la materia de programación web">
+<meta name="author" content="Yatziri Esquivel">
+<meta name="keywords" content="Programación Web">
+<link href="estilo/css/bootstrap.css" rel="stylesheet">
+<link href="estilo/css/stylee.css" rel="stylesheet">
+
+
+</head>
+<body>
+	<div class="container">
+	<div class="row">
+	<div class="col-md-12 offset-md-12">
+
+		<form align="center">
+		<h1 align="center">Calculadora Javascript</h1>
+		<p>Esta página muestra la práctica de una calculadora que realiza las operaciones básicas las cuales son:
+		   suma, resta, multiplicación y división. Está elaborada con bootstrap, javascript y html con estilos css.
+		</p><br><br>
+		<div class="card-body">
+			<h2 class="enlace">Realiza una operación</h2>
+		<input type="text" id="n1" name="">
+<select id="op" required="required">
+	  <option value="suma">+</option>
+      <option value="resta">-</option>
+      <option value="multiplicacion">*</option>
+      <option value="division">/</option>
+</select>
+		<input type="text" id="n2">
+ 
+    =
+ 
+    <input type="text" id="resultado">
+ 
+    <button clas="botons" class="btn btn-success" type="submit" id="boton">Calcular</button>
+</div>
+		</form>
+		<br><br><br><br><br><br><br>
+
+		<script src="scripts.js"></script>  
+ 		<script type="text/javascript">
+ 			 window.onload = function()
+		{
+			document.getElementById("boton").onclick = function(event)
+			{
+			event.preventDefault();
+ 
+			operar();
+			};
+		}; 
+
+ 
+			function operar()
+{
+	var n1 = document.getElementById("n1");
+	var n2 = document.getElementById("n2");
+	var op  = document.getElementById("op");
+ 
+	var resultado = NaN;
+ 
+	switch(op.value)
+	{
+		case "suma":
+			resultado = parseFloat(n1.value) + 
+			            parseFloat(n2.value);
+		break;
+ 
+		case "resta":
+			resultado = parseFloat(n1.value) - 
+			            parseFloat(n2.value);
+		break;
+ 
+		case "multiplicacion":
+			resultado = parseFloat(n1.value) * 
+			            parseFloat(n2.value);
+		break;
+ 
+		case "division":
+			resultado = parseFloat(n1.value) / 
+			            parseFloat(n2.value);
+		break;
+	}
+ 
+	if(!isNaN(resultado))
+		document.getElementById("resultado").value = resultado;
+}
+
+
+window.addEventListener('mouseover', function(evt) {
+  if (evt.target.classList.contains('enlace')) {
+    evt.target.style.color = 'orange';
+  }
+});
+window.addEventListener('mouseout', function(evt) {
+  // Si elemento tiene la clase `enlace`
+  if (evt.target.classList.contains('enlace')) {
+    evt.target.style.color = 'black';
+  }
+});
+</script>
+	</div>
+	
+</div>
+</div>
+
+
+</body>
